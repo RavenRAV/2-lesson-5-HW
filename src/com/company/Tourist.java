@@ -4,9 +4,10 @@ import java.util.concurrent.CountDownLatch;
 
 
 public class Tourist extends Thread  {
-    private static CountDownLatch LATCH;
+    CountDownLatch LATCH;
     private int tuNum;
-    public Tourist(int tuNum){
+    public Tourist(int tuNum, CountDownLatch c){
+        LATCH = c;
         this.tuNum=tuNum;
     }
     public void run(){

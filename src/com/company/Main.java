@@ -8,9 +8,9 @@ public class Main {
 
 
     public static void main(String[] args) throws InterruptedException {//почему?
-        LATCH = new CountDownLatch(TOURIST_COUNT + 1);
+        CountDownLatch c = new CountDownLatch(TOURIST_COUNT + 1);
         for (int i = 1; i <= TOURIST_COUNT; i++) {
-            Tourist tourist = new Tourist(i);
+            Tourist tourist = new Tourist(i,c);
             tourist.start();
             Thread.sleep(1000);
         }
