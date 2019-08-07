@@ -13,9 +13,9 @@ public class Tourist extends Thread  {
     public void run(){
         try {
             System.out.printf("Турист %d подошел к экскурсоводу", tuNum);
+            System.out.println();
             LATCH.countDown();
             LATCH.await();
-            Thread.sleep(100);
 
         }catch (InterruptedException e) {
         }
